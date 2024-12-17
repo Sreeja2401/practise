@@ -51,6 +51,9 @@ public class Interview {
     private void filterBooksWithCoverAreaOverTheThreshold(List<Book> books, int threshold) {
         books.stream().filter(book -> book.covers().stream().anyMatch(b->b.getArea()>threshold)).toList();
 
+
+
+
     //Write a method that filters books where all the covers have an area greater than the threshold.
         books.stream().filter(book -> book.covers().stream().allMatch(b->b.getArea()>threshold)).toList();
 
