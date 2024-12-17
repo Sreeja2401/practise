@@ -58,9 +58,6 @@ public class Interview {
    List<Integer> i = List.of(1,3,4,5,6,7);
    i.stream().mapToInt(i1->i1).sum();
    i.stream().collect(Collectors.summingInt(i2->i2));
-  // List<String> l2 =
-
-
 
 
     }
