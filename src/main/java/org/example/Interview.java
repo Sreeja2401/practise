@@ -45,7 +45,6 @@ public class Interview {
     }
     public void employeesWorkingOnMoreThanOneProject(List<Project2> project2s)
     {
-
         project2s.stream().flatMap(pr->pr.employees().stream()).collect(Collectors.groupingBy(employee2 -> employee2.name,Collectors.counting())).entrySet().stream().filter(e->e.getValue()>1).forEach(System.out::println);
     }
     private void filterBooksWithCoverAreaOverTheThreshold(List<Book> books, int threshold) {
@@ -54,9 +53,6 @@ public class Interview {
     //Write a method that filters books where all the covers have an area greater than the threshold.
         books.stream().filter(book -> book.covers().stream().allMatch(b->b.getArea()>threshold)).toList();
 
-    //Sort the filtered books by the total cover area (sum of all covers).
-//       book - c1 c2 c3
-//       book2  c1 c2 c3
         System.out.println(books.stream().map(book -> book.covers().stream().collect(Collectors.summingInt(Cover::getArea))).sorted());
 
    List<Integer> i = List.of(1,3,4,5,6,7);
